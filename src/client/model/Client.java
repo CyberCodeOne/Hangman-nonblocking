@@ -7,7 +7,7 @@ import client.controller.*;
 
 public class Client 
 {
-	private final int PORT = 1234;
+	private final int PORT = 8080;
 	private InetAddress host;
 	private InetSocketAddress serverAdd;
 	private Selector selector;
@@ -18,7 +18,7 @@ public class Client
 	{
 		try
 		{
-			host = InetAddress.getLocalHost();
+			host = InetAddress.getByName("130.229.152.160");
 			serverAdd = new InetSocketAddress(host, PORT);
 			selector = Selector.open();
 			socket = SocketChannel.open();
